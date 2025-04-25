@@ -13,7 +13,7 @@ const AvatarModel = ({ url }) => {
   const { camera } = useThree();
 
   useEffect(() => {
-    camera.position.set(0, 0, 5);
+    camera.position.set(0, 0, 4);
     camera.lookAt(0, 0, 0);
     const loader = new FBXLoader();
     loader.load(
@@ -25,7 +25,7 @@ const AvatarModel = ({ url }) => {
         const scaleFactor = 3.5 / maxDim;
 
         fbx.scale.set(scaleFactor, scaleFactor, scaleFactor);
-        fbx.position.set(0, -1.5, 0);
+        fbx.position.set(0, -2.5, 0);
         fbx.rotation.set(0, 0, 0);
         setModel(fbx);
 
