@@ -1,7 +1,6 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import { useRef, useEffect, useState, Suspense } from "react";
 import * as THREE from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
@@ -55,7 +54,6 @@ const AvatarModel = ({ url }) => {
     };
   }, [url, camera]);
 
-  // Update animation on every frame
   useFrame((state, delta) => {
     if (mixerRef.current) {
       mixerRef.current.update(delta);
@@ -69,20 +67,18 @@ export default function AvatarHardLanding() {
   return (
     <Canvas
       camera={{ fov: 90 }}
-      style={{ height: "100%", width: "100%", margin: "0 auto" }}
+      style={{
+        height: "100%",
+        width: "100%",
+        margin: "0 auto",
+        pointerEvents: "none",
+      }}
     >
       <ambientLight intensity={1.2} />
       <directionalLight position={[2, 5, 2]} />
       <Suspense fallback={null}>
         <AvatarModel url="/assets/HardLanding.fbx" />
       </Suspense>
-      <OrbitControls
-        enablePan={false}
-        enableZoom={false}
-        enableRotate={false}
-        minPolarAngle={Math.PI / 2.5}
-        maxPolarAngle={Math.PI / 1.5}
-      />
     </Canvas>
   );
 }
