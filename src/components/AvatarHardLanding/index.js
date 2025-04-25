@@ -12,7 +12,7 @@ const AvatarModel = ({ url }) => {
   const { camera } = useThree();
 
   useEffect(() => {
-    camera.position.set(0, 0, 4);
+    camera.position.set(0, 0, 5);
     camera.lookAt(0, 0, 0);
     const loader = new FBXLoader();
     loader.load(
