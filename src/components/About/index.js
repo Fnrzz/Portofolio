@@ -58,7 +58,7 @@ const About = () => {
       ref={sectionRef}
       className="min-h-screen bg-black text-white md:py-10 md:px-20 px-6 py-6 "
     >
-      <div className="flex md:flex-row flex-col gap-6">
+      <div className="flex lg:flex-row flex-col gap-6">
         <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-10 md:col-span-1 flex flex-col justify-between">
             <div>
