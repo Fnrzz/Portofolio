@@ -15,7 +15,7 @@ export default function Home() {
     <>
       {loading && <Preloader onComplete={handlePreloaderComplete} />}
       {!loading && (
-        <main>
+        <main className="min-h-[500vh]">
           <Navbar animate={true} />
           <section id="home">
             <Hero />

@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger, TextPlugin } from "gsap/all";
+import { Linkedin, MailIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -115,18 +116,27 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 md:col-span-1 md:col-span-2 flex flex-col justify-between">
-            <h2 className="text-xl font-semibold mb-2">
-              My Passion for Coding
-            </h2>
-            <p className="text-sm text-gray-300">
-              I love solving problems and building things through code. It’s not
-              just a profession — it’s my passion.
-            </p>
+          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 md:col-span-1 md:col-span-2 flex flex-col md:flex-row items-center gap-3">
+            <Image
+              src={"/images/developer.png"}
+              alt={"developer"}
+              width={200}
+              height={200}
+              className=" mb-4"
+            />
+            <div>
+              <h2 className="text-xl font-semibold mb-2">
+                My Passion for Coding
+              </h2>
+              <p className="text-sm text-gray-300">
+                I love solving problems and building things through code. It’s
+                not just a profession — it’s my passion.
+              </p>
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 flex flex-col h-full">
+          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 flex flex-col ">
             <Image
               src={"/images/freelancer.webp"}
               alt="freelancer"
@@ -140,15 +150,20 @@ const About = () => {
             <p className="text-sm text-gray-300 mb-4">
               Based in Indonesia, available for remote collaboration.
             </p>
-            <button className="bg-[#1f1f1f] py-2 px-4 rounded-md text-sm flex items-center gap-2">
-              <span className="h-2 w-2 bg-green-500 rounded-full"></span>
-              Contact Me
-            </button>
           </div>
 
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 flex flex-col justify-between items-start">
+          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 flex flex-col h-full">
             <h2 className="text-xl font-semibold mb-2">Contact Me</h2>
-            <p className="text-sm text-gray-300">faridnur@youremail.com</p>
+            <div className="flex items-end gap-2 mb-4">
+              <MailIcon />
+              <p className="w-full text-sm text-gray-300">
+                faridnurraidananda6@gmail.com
+              </p>
+            </div>
+            <div className="flex items-end gap-2">
+              <Linkedin />
+              <p className="text-sm text-gray-300">farid-nur-raidananda</p>
+            </div>
           </div>
         </div>
       </div>
