@@ -4,6 +4,7 @@ import Preloader from "@/components/Preloading";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import CustomCrusor from "@/components/CustomCrusor";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -15,15 +16,20 @@ export default function Home() {
     <>
       {loading && <Preloader onComplete={handlePreloaderComplete} />}
       {!loading && (
-        <main className="min-h-[500vh]">
-          <Navbar animate={true} />
-          <section id="home">
-            <Hero />
-          </section>
-          <section id="about">
-            <About />
-          </section>
-        </main>
+        <>
+          <div className="hidden md:block">
+            <CustomCrusor />
+          </div>
+          <main className="min-h-[500vh]">
+            <Navbar animate={true} />
+            <section id="home">
+              <Hero />
+            </section>
+            <section id="about">
+              <About />
+            </section>
+          </main>
+        </>
       )}
     </>
   );
