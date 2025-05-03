@@ -25,7 +25,7 @@ export default function Home() {
             <section id="home">
               <Hero />
             </section>
-            <section id="about">
+            <section id="about" className="scroll-mt-10">
               <About />
             </section>
           </main>
