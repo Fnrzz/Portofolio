@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { Playfair_Display } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
@@ -10,15 +10,17 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const AvatarHardLanding = dynamic(() => import("../AvatarHardLanding"), {
-  ssr: false,
-});
-
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   weight: ["400", "500", "600", "700"],
 });
+
+const avatarImages = [
+  "/images/avatar1.png",
+  "/images/avatar2.png",
+  "/images/avatar3.png",
+];
 
 const Hero = () => {
   const nameRef = useRef(null);
@@ -26,16 +28,17 @@ const Hero = () => {
   const subtitleRef = useRef(null);
   const sectionRef = useRef(null);
   const avatarRef = useRef(null);
+  const avatarImgRef = useRef(null);
   const handRef = useRef(null);
   const [shouldAnimate, setShouldAnimate] = useState(false);
-  const [resetKey, setResetKey] = useState(0);
+  const [avatarIndex, setAvatarIndex] = useState(0);
+  const [nextAvatarIndex, setNextAvatarIndex] = useState(1);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setShouldAnimate(true);
-          setResetKey((prev) => prev + 1);
         } else {
           setShouldAnimate(false);
         }
@@ -92,6 +95,44 @@ const Hero = () => {
   }, [shouldAnimate]);
 
   useEffect(() => {
+    if (!shouldAnimate || !avatarImgRef.current) return;
+
+    const container = avatarImgRef.current;
+
+    const tl = gsap.timeline();
+
+    tl.to(container, {
+      x: "-100%", // keluar ke kiri
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+      onComplete: () => {
+        setAvatarIndex(nextAvatarIndex);
+        gsap.set(container, { x: "100%" });
+      },
+    });
+
+    tl.to(container, {
+      x: "0%",
+      opacity: 1,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+
+    return () => tl.kill();
+  }, [nextAvatarIndex, shouldAnimate]);
+
+  useEffect(() => {
+    if (shouldAnimate) {
+      const interval = setInterval(() => {
+        setNextAvatarIndex((prev) => (prev + 1) % avatarImages.length);
+      }, 2000);
+
+      return () => clearInterval(interval);
+    }
+  }, [shouldAnimate]);
+
+  useEffect(() => {
     if (typeof window === "undefined") return;
 
     const ctx = gsap.context(() => {
@@ -142,7 +183,8 @@ const Hero = () => {
 
       gsap.to(avatarRef.current, {
         opacity: 0,
-        y: -30,
+        y: -50,
+        scale: 0.8,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
@@ -199,8 +241,20 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="w-full h-[500px]" ref={avatarRef}>
-          <AvatarHardLanding key={resetKey} />
+        <div
+          className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] mt-6"
+          ref={avatarRef}
+        >
+          <div ref={avatarImgRef} className="w-full h-full overflow-hidden">
+            <Image
+              src={avatarImages[avatarIndex]}
+              alt="avatar"
+              width={300}
+              height={300}
+              quality={100}
+              className="object-cover w-full h-full transition-all duration-300 ease-in-out "
+            />
+          </div>
         </div>
       </div>
     </div>
