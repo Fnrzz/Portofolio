@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger, TextPlugin } from "gsap/all";
-import { Linkedin, MailIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -11,161 +10,160 @@ const About = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const cards = gsap.utils.toArray(".card-animate");
+    if (!sectionRef.current) return;
 
-    const animateText = (element) => {
-      const textElements = element.querySelectorAll("h2, p");
+    const context = gsap.context(() => {
+      const paragraph = sectionRef.current.querySelectorAll(".animated-text");
+      const images = sectionRef.current.querySelectorAll(".animated-img");
 
-      textElements.forEach((el) => {
-        const originalText = el.textContent;
-        el.textContent = "";
+      if (!paragraph) return;
 
-        gsap.to(el, {
-          text: originalText,
-          duration: originalText.length * 0.02,
-          ease: "none",
-          delay: 0.2,
-        });
-      });
-    };
-
-    cards.forEach((card) => {
-      gsap.fromTo(
-        card,
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.95,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-            onEnter: () => animateText(card),
+      paragraph.forEach((img, i) => {
+        gsap.fromTo(
+          img,
+          {
+            opacity: 0,
+            x: i % 2 === 0 ? -100 : 100,
+            scale: 0.8,
           },
-        }
-      );
-    });
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: i * 0.2,
+            scrollTrigger: {
+              trigger: img,
+              start: "top 95%",
+              toggleActions: "restart none none none",
+            },
+          }
+        );
+      });
+
+      // Animasi gambar tetap (ulang juga)
+      images.forEach((img, i) => {
+        gsap.fromTo(
+          img,
+          {
+            opacity: 0,
+            x: i % 2 === 0 ? -100 : 100,
+            scale: 0.8,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: i * 0.2,
+            scrollTrigger: {
+              trigger: img,
+              start: "top 95%",
+              toggleActions: "restart none none none",
+            },
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => context.revert();
   }, []);
 
   return (
     <div
       ref={sectionRef}
-      className="min-h-screen bg-black text-white md:py-10 md:px-20 px-6 py-6 "
+      className="bg-black text-white md:py-10 md:px-20 px-6 py-6"
     >
-      <div className="flex lg:flex-row flex-col gap-6">
-        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-10 md:col-span-1 flex flex-col justify-between">
-            <div>
-              <Image
-                src="/images/avatar4.png"
-                alt="Avatar"
-                width={150}
-                height={150}
-                className=" mx-auto mb-10"
-              />
-              <h2 className="text-xl font-semibold mb-2">Hi, I'm Farid</h2>
-              <p className="text-sm text-gray-300">
-                I'm a passionate frontend developer focused on building clean,
-                responsive, and interactive web experiences.
-              </p>
-            </div>
-          </div>
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 md:col-span-1 flex flex-col justify-between">
-            <div>
-              <h2 className="text-xl font-semibold mb-2">Tech Stack</h2>
-              <p className="text-sm text-gray-300 mb-4">
-                I use React.js, TailwindCSS, Next.js, and Laravel to bring ideas
-                to life on the web.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Image
-                  src={"/images/react.png"}
-                  alt="react"
-                  width={100}
-                  height={100}
-                  className="rounded-full object-cover object-center h-15 w-15"
-                />
-                <Image
-                  src={"/images/nextjs.webp"}
-                  alt="nextjs"
-                  width={100}
-                  height={100}
-                  className="rounded-full object-cover object-center h-15 w-15"
-                />
-                <Image
-                  src={"/images/tailwind.png"}
-                  alt="tailwind"
-                  width={100}
-                  height={100}
-                  className="rounded-full object-cover object-center h-15 w-15"
-                />
-                <Image
-                  src={"/images/laravel.jpg"}
-                  alt="laravel"
-                  width={150}
-                  height={150}
-                  className="rounded-full object-cover object-center h-15 w-15"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 md:col-span-1 md:col-span-2 flex flex-col md:flex-row items-center gap-3">
-            <Image
-              src={"/images/avatar5.png"}
-              alt={"developer"}
-              width={200}
-              height={200}
-              className=" mb-4"
-            />
-            <div>
-              <h2 className="text-xl font-semibold mb-2">
-                My Passion for Coding
-              </h2>
-              <p className="text-sm text-gray-300">
-                I love solving problems and building things through code. It’s
-                not just a profession — it’s my passion.
-              </p>
-            </div>
-          </div>
+      <div className="mx-auto text-[20px] md:text-[40px] leading-relaxed lg:text-center font-bold ">
+        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+          Hi, I'm Farid
         </div>
-        <div className="flex flex-col gap-6">
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 flex flex-col ">
-            <Image
-              src={"/images/avatar1.png"}
-              alt="freelancer"
-              width={300}
-              height={300}
-              className="mx-auto mb-10"
-            />
-            <h2 className="text-xl font-semibold mb-2">
-              I work remotely across most timezones.
-            </h2>
-            <p className="text-sm text-gray-300 mb-4">
-              Based in Indonesia, available for remote collaboration.
-            </p>
-          </div>
-
-          <div className="card-animate bg-[#0E0E10] border-2 border-[#1a1a1a] rounded-xl p-6 flex flex-col h-full">
-            <h2 className="text-xl font-semibold mb-2">Contact Me</h2>
-            <div className="flex items-end gap-2 mb-4">
-              <MailIcon />
-              <p className="w-full text-sm text-gray-300">
-                faridnurraidananda6@gmail.com
-              </p>
-            </div>
-            <div className="flex items-end gap-2">
-              <Linkedin />
-              <p className="text-sm text-gray-300">farid-nur-raidananda</p>
-            </div>
-          </div>
+        <Image
+          src="/images/avatar4.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="hidden lg:inline-block md:w-20 mx-2 align-text-bottom animated-img"
+        />
+        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+          I'm a passionate frontend developer
         </div>
+        <Image
+          src="/images/avatar5.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="hidden lg:inline-block md:w-20 mx-2 align-text-bottom animated-img"
+        />
+        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+          who loves building clean
+        </div>
+        <Image
+          src="/images/avatar6.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="hidden lg:inline-block md:w-20 mx-1 align-text-bottom animated-img"
+        />
+        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+          responsive, and interactive
+        </div>
+        <Image
+          src="/images/avatar7.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="hidden lg:inline-block md:w-20 mx-1 align-text-bottom animated-img"
+        />
+        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+          web experiences — one pixel at a time
+        </div>
+        <Image
+          src="/images/avatar8.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="hidden lg:inline-block md:w-20 mx-2 align-text-bottom animated-img"
+        />
+      </div>
+      <div className="flex lg:hidden justify-center items-center mt-4 gap-2">
+        <Image
+          src="/images/avatar4.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="animated-img w-15 md:w-full align-text-bottom"
+        />
+        <Image
+          src="/images/avatar5.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="animated-img w-15 md:w-full align-text-bottom"
+        />
+        <Image
+          src="/images/avatar6.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="animated-img w-15 md:w-full align-text-bottom"
+        />
+        <Image
+          src="/images/avatar7.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="animated-img w-15 md:w-full align-text-bottom"
+        />
+        <Image
+          src="/images/avatar8.png"
+          alt="avatar"
+          width={100}
+          height={100}
+          className="animated-img w-15 md:w-full align-text-bottom"
+        />
       </div>
     </div>
   );

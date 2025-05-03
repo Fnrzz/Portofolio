@@ -19,13 +19,13 @@ const CustomCursor = () => {
       cursorColor: "#FF5733",
       bubbleColor: "bg-orange-200",
       textColor: "text-orange-800",
-      bubbleText: "Home",
+      bubbleText: "Hi!",
     },
     about: {
       cursorColor: "#3498DB",
       bubbleColor: "bg-blue-200",
       textColor: "text-blue-800",
-      bubbleText: "About",
+      bubbleText: "This is me",
     },
     projects: {
       cursorColor: "#2ECC71",
