@@ -61,7 +61,7 @@ const TechStack = () => {
             scale: 1,
             duration: 0.6,
             ease: "back.out(1.4)",
-            delay: i * 0.1,
+            delay: i * 0.5,
             scrollTrigger: {
               trigger: img,
               start: "top 95%",
@@ -78,7 +78,7 @@ const TechStack = () => {
   return (
     <div
       ref={sectionRef}
-      className="md:py-10 md:px-20 px-6 py-6 text-white flex justify-center bg-black"
+      className="md:py-10 md:px-20 px-6 py-6 text-white flex justify-center bg-black overflow-hidden"
     >
       <div className="md:w-[90%]">
         <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6">
@@ -112,7 +112,13 @@ const TechStack = () => {
               className="animated-img rounded-full bg-white w-15 h-15 md:w-24 md:h-24 flex items-center justify-center"
               title={brand.name}
             >
-              <Image src={brand.logo} alt={brand.name} width={60} height={60} />
+              <Image
+                src={brand.logo}
+                alt={brand.name}
+                width={60}
+                height={60}
+                className="w-[80%] object-cover"
+              />
             </div>
           ))}
         </div>

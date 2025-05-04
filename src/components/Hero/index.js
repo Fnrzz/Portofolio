@@ -252,6 +252,7 @@ const Hero = () => {
               width={300}
               height={300}
               quality={100}
+              priority
               className="object-cover w-full h-full transition-all duration-300 ease-in-out "
             />
           </div>
