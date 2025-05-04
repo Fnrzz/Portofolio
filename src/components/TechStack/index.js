@@ -78,9 +78,18 @@ const TechStack = () => {
   return (
     <div
       ref={sectionRef}
-      className="h-screen md:py-10 md:px-20 px-6 py-6 text-white flex justify-center items-center bg-black overflow-hidden"
+      className="relative h-screen w-full md:py-10 md:px-20 px-6 py-6 text-white flex justify-center items-center bg-black overflow-hidden"
     >
-      <div className="md:w-[90%]">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/3d.png"
+          alt="3d"
+          fill
+          className="absolute opacity-60 blur-md object-contain md:object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-10" />
+      </div>
+      <div className="relative z-10 md:w-[90%]">
         <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6">
           <div className="flex-1 animated-text">
             <h2 className="text-3xl md:text-6xl font-semibold leading-tight">
@@ -96,7 +105,7 @@ const TechStack = () => {
             </h2>
           </div>
 
-          <div className="flex-1 text-md md:text-base text-gray-300 animated-text">
+          <div className="flex-1 text-lg md:text-base text-gray-300 animated-text">
             <p>
               I specialize in building modern, responsive, and scalable web
               applications using React.js, TailwindCSS, Next.js, and Laravel —
