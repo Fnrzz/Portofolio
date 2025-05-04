@@ -54,7 +54,7 @@ const About = () => {
   return (
     <div
       ref={sectionRef}
-      className="h-screen flex items-center text-white md:py-10 md:px-20 px-6 py-6 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center lg:flex-row lg:items-center text-white md:py-10 md:px-20 px-6 py-6 overflow-hidden"
     >
       <div className="mx-auto text-[20px] lg:text-[40px] leading-relaxed lg:text-center font-bold ">
         <div className="inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
