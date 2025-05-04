@@ -13,57 +13,37 @@ const About = () => {
     if (!sectionRef.current) return;
 
     const context = gsap.context(() => {
-      const paragraph = sectionRef.current.querySelectorAll(".animated-text");
-      const images = sectionRef.current.querySelectorAll(".animated-img");
+      const elements = sectionRef.current.querySelectorAll(
+        ".animated-text, .animated-img"
+      );
 
-      if (!paragraph) return;
-
-      paragraph.forEach((text, i) => {
-        gsap.fromTo(
-          text,
-          {
-            opacity: 0,
-            x: i % 2 === 0 ? -100 : 100,
-            scale: 0.8,
-          },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            delay: i * 0.2,
-            scrollTrigger: {
-              trigger: text,
-              start: "top 95%",
-              toggleActions: "restart none none none",
-            },
-          }
-        );
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: () => "+=" + elements.length * 150, // total scroll distance
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
       });
 
-      // Animasi gambar tetap (ulang juga)
-      images.forEach((img, i) => {
-        gsap.fromTo(
-          img,
+      elements.forEach((el, i) => {
+        tl.fromTo(
+          el,
           {
             opacity: 0,
-            x: i % 2 === 0 ? -100 : 100,
-            scale: 0.8,
+            y: 40,
+            scale: 0.95,
           },
           {
             opacity: 1,
-            x: 0,
+            y: 0,
             scale: 1,
-            duration: 0.8,
+            duration: 0.5,
             ease: "power2.out",
-            delay: i * 0.2,
-            scrollTrigger: {
-              trigger: img,
-              start: "top 95%",
-              toggleActions: "restart none none none",
-            },
-          }
+          },
+          i // urutkan berdasarkan index
         );
       });
     }, sectionRef);
