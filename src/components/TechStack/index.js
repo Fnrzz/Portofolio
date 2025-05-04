@@ -78,7 +78,7 @@ const TechStack = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative h-[50vh] lg:min-h-screen w-full md:py-10 md:px-20 px-6 py-6 text-white flex justify-center items-center bg-black overflow-hidden"
+      className="relative h-[80vh] lg:min-h-screen w-full md:py-10 md:px-20 px-6 py-6 text-white flex justify-center items-center bg-black overflow-hidden"
     >
       <div className="absolute inset-0">
         <Image
