@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const brands = [
   { name: "Laravel", logo: "/images/laravel.png" },
-  { name: "Nextjs", logo: "/images/nextjs.webp" },
+  { name: "Nextjs", logo: "/images/nextjs.png" },
   { name: "React", logo: "/images/react.png" },
   { name: "Tailwind", logo: "/images/tailwind.png" },
 ];
@@ -78,7 +78,7 @@ const TechStack = () => {
   return (
     <div
       ref={sectionRef}
-      className="md:py-10 md:px-20 px-6 py-6 text-white flex justify-center bg-black overflow-hidden"
+      className="h-screen md:py-10 md:px-20 px-6 py-6 text-white flex justify-center items-center bg-black overflow-hidden"
     >
       <div className="md:w-[90%]">
         <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6">
