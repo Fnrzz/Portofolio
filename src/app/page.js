@@ -18,7 +18,7 @@ export default function Home() {
       {loading && <Preloader onComplete={handlePreloaderComplete} />}
       {!loading && (
         <>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <CustomCrusor />
           </div>
           <main className="min-h-[500vh]">
