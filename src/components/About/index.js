@@ -18,9 +18,9 @@ const About = () => {
 
       if (!paragraph) return;
 
-      paragraph.forEach((img, i) => {
+      paragraph.forEach((text, i) => {
         gsap.fromTo(
-          img,
+          text,
           {
             opacity: 0,
             x: i % 2 === 0 ? -100 : 100,
@@ -34,7 +34,7 @@ const About = () => {
             ease: "power2.out",
             delay: i * 0.2,
             scrollTrigger: {
-              trigger: img,
+              trigger: text,
               start: "top 95%",
               toggleActions: "restart none none none",
             },
@@ -74,10 +74,10 @@ const About = () => {
   return (
     <div
       ref={sectionRef}
-      className="bg-black text-white md:py-10 md:px-20 px-6 py-6 overflow-hidden"
+      className="text-white md:py-10 md:px-20 px-6 py-6 overflow-hidden"
     >
-      <div className="mx-auto text-[20px] md:text-[40px] leading-relaxed lg:text-center font-bold ">
-        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+      <div className="mx-auto text-[20px] md:text-[30px] lg:text-[40px] leading-relaxed lg:text-center font-bold ">
+        <div className="inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
           Hi, I'm Farid
         </div>
         <Image
@@ -85,9 +85,9 @@ const About = () => {
           alt="avatar"
           width={100}
           height={100}
-          className="hidden lg:inline-block md:w-20 mx-2 align-text-bottom animated-img"
+          className="hidden lg:inline-block md:w-20 mx-2 align-text-bottom animated-img "
         />
-        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
           I'm a passionate frontend developer
         </div>
         <Image
@@ -97,7 +97,7 @@ const About = () => {
           height={100}
           className="hidden lg:inline-block md:w-20 mx-2 align-text-bottom animated-img"
         />
-        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
           who loves building clean
         </div>
         <Image
@@ -107,7 +107,7 @@ const About = () => {
           height={100}
           className="hidden lg:inline-block md:w-20 mx-1 align-text-bottom animated-img"
         />
-        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
           responsive, and interactive
         </div>
         <Image
@@ -117,7 +117,7 @@ const About = () => {
           height={100}
           className="hidden lg:inline-block md:w-20 mx-1 align-text-bottom animated-img"
         />
-        <div className="inline-block animated-text transform transition duration-500 hover:scale-102  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
           web experiences — one pixel at a time
         </div>
         <Image
@@ -128,7 +128,7 @@ const About = () => {
           className="hidden lg:inline-block md:w-20 mx-2 align-text-bottom animated-img"
         />
       </div>
-      <div className="flex lg:hidden justify-center items-center mt-4 gap-2">
+      <div className="flex lg:hidden justify-center items-center mt-4 gap-2 overflow-hidden">
         <Image
           src="/images/avatar4.png"
           alt="avatar"

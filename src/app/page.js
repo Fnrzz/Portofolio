@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CustomCrusor from "@/components/CustomCrusor";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -25,8 +26,12 @@ export default function Home() {
             <section id="home">
               <Hero />
             </section>
-            <section id="about" className="scroll-mt-10">
+            <section
+              id="about"
+              className="bg-black space-y-10 lg:space-y-20 scroll-mt-10"
+            >
               <About />
+              <TechStack />
             </section>
           </main>
         </>
