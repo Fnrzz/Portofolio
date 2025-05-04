@@ -26,10 +26,7 @@ export default function Home() {
             <section id="home">
               <Hero />
             </section>
-            <section
-              id="about"
-              className="bg-black space-y-10 lg:space-y-20 scroll-mt-10"
-            >
+            <section id="about" className="bg-black scroll-mt-10">
               <About />
               <TechStack />
             </section>
