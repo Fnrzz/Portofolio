@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = ({ animate }) => {
   const navRef = useRef(null);
@@ -74,21 +77,24 @@ const Navbar = ({ animate }) => {
       };
     });
 
-    const sections = items.map((item) => document.getElementById(item.id));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    const sections = items.map((item) => item.id);
 
-    sections.forEach((section) => section && observer.observe(section));
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (!section) return;
 
-    return () => observer.disconnect();
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setActiveSection(id),
+        onEnterBack: () => setActiveSection(id),
+      });
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   const items = [

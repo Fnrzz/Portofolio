@@ -56,7 +56,7 @@ const About = () => {
       ref={sectionRef}
       className="text-white md:py-10 md:px-20 px-6 py-6 overflow-hidden"
     >
-      <div className="mx-auto text-[20px] md:text-[30px] lg:text-[40px] leading-relaxed lg:text-center font-bold ">
+      <div className="mx-auto text-[20px] lg:text-[40px] leading-relaxed lg:text-center font-bold ">
         <div className="inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
           Hi, I'm Farid
         </div>
