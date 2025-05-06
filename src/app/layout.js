@@ -1,3 +1,4 @@
+import ScrollWrapper from "@/components/ScrollWrapper";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 
@@ -17,9 +18,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={`${poppins.className} antialiased overflow-x-hidden`}>
-        {children}
+        <ScrollWrapper>{children}</ScrollWrapper>
       </body>
     </html>
   );
