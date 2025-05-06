@@ -15,6 +15,7 @@ const brands = [
 
 const TechStack = () => {
   const sectionRef = useRef(null);
+  const bgWrapperRef = useRef(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -75,17 +76,43 @@ const TechStack = () => {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    const bgWrapper = bgWrapperRef.current;
+
+    if (bgWrapper && section) {
+      gsap.to(bgWrapper, {
+        y: 200,
+        scale: 1.2,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
     <div
       ref={sectionRef}
       className="relative h-[80vh] lg:min-h-screen w-full md:py-10 md:px-20 px-6 py-6 text-white flex justify-center items-center bg-black overflow-hidden"
     >
-      <div className="absolute inset-0">
+      <div
+        ref={bgWrapperRef}
+        className="absolute inset-0 will-change-transform"
+      >
         <Image
           src="/images/3d.png"
           alt="3d"
           fill
-          className="absolute opacity-60 blur-md object-contain md:object-cover"
+          className=" opacity-60 blur-md object-contain md:object-cover"
         />
         <div className="absolute inset-0 bg-black opacity-10" />
       </div>
