@@ -11,7 +11,9 @@ const ScrollWrapper = ({ children }) => {
       smooth: true,
       smoothWheel: true,
       smoothTouch: true,
-      lerp: 0.05,
+      lerp: 0.035,
+      touchMultiplier: 0.5,
+      wheelMultiplier: 0.5,
       duration: 1.2,
       infinite: false,
     });
