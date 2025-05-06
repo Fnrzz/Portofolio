@@ -29,7 +29,7 @@ const ScrollWrapper = ({ children }) => {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          lenis.scrollTo(target, { offset: -20 });
+          lenis.scrollTo(target);
         }
       }
     };
