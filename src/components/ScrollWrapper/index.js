@@ -9,7 +9,7 @@ const ScrollWrapper = ({ children }) => {
   useEffect(() => {
     const lenis = new Lenis({
       smooth: true,
-      lerp: 0.08,
+      lerp: 0.05,
     });
 
     function raf(time) {
