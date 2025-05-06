@@ -10,6 +10,11 @@ const ScrollWrapper = ({ children }) => {
     const lenis = new Lenis({
       smooth: true,
       lerp: 0.05,
+      smoothWheel: true,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 1.5,
+      duration: 1.2,
+      infinite: false,
     });
 
     function raf(time) {
