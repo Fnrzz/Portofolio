@@ -57,7 +57,7 @@ const About = () => {
       className="h-[80vh] lg:min-h-screen flex flex-col justify-center lg:flex-row lg:items-center text-white md:py-10 md:px-20 px-6 py-6 overflow-hidden"
     >
       <div className="mx-auto text-[25px] lg:text-[40px] leading-relaxed lg:text-center font-bold ">
-        <div className="me-2 inline-block transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="me-2 inline-block transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-white hover:via-[#d4d4d4] hover:to-[#a3a3a3]">
           Hi, I'm Farid
         </div>
         <Image
@@ -67,7 +67,7 @@ const About = () => {
           height={100}
           className="hidden lg:inline-block md:w-20 me-2 align-text-bottom"
         />
-        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-white hover:via-[#d4d4d4] hover:to-[#a3a3a3]">
           I'm a passionate frontend developer
         </div>
         <Image
@@ -77,7 +77,7 @@ const About = () => {
           height={100}
           className="hidden lg:inline-block md:w-20 me-2 align-text-bottom animated-img"
         />
-        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-white hover:via-[#d4d4d4] hover:to-[#a3a3a3]">
           who loves building clean
         </div>
         <Image
@@ -87,7 +87,7 @@ const About = () => {
           height={100}
           className="hidden lg:inline-block md:w-20 mx-1 align-text-bottom animated-img"
         />
-        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-white hover:via-[#d4d4d4] hover:to-[#a3a3a3]">
           responsive, and interactive
         </div>
         <Image
@@ -97,7 +97,7 @@ const About = () => {
           height={100}
           className="hidden lg:inline-block md:w-20 mx-1 align-text-bottom animated-img"
         />
-        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500">
+        <div className="me-2 inline-block animated-text transform transition duration-500  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-white hover:via-[#d4d4d4] hover:to-[#a3a3a3]">
           web experiences — one pixel at a time
         </div>
         <Image

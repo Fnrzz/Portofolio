@@ -121,12 +121,12 @@ const TechStack = () => {
           <div className="flex-1 animated-text">
             <h2 className="text-3xl md:text-6xl font-semibold leading-tight">
               This{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#d4d4d4] to-[#a3a3a3]">
                 is
               </span>
               ,<br />
               My{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#d4d4d4] to-[#a3a3a3]">
                 TechStack
               </span>
             </h2>
