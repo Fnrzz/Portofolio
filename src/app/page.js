@@ -21,7 +21,7 @@ export default function Home() {
           <div className="hidden lg:block">
             <CustomCrusor />
           </div>
-          <main className="min-h-[500vh]">
+          <main className="min-h-[500vh] cursor-none">
             <Navbar animate={true} />
             <section id="home">
               <Hero />

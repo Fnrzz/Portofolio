@@ -118,8 +118,8 @@ const Navbar = ({ animate }) => {
             key={i}
             ref={(el) => (linksRef.current[i] = el)}
             className={`relative rounded-full group transition-all duration-300 
-        flex items-center justify-center overflow-hidden 
-        min-w-[40px] h-[40px] cursor-pointer
+        flex items-center justify-center overflow-hidden cursor-none
+        min-w-[40px] h-[40px]
         ${
           isActive
             ? "bg-black text-white"
