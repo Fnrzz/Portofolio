@@ -20,9 +20,26 @@ const ScrollWrapper = ({ children }) => {
 
     requestAnimationFrame(raf);
 
+    const handleClick = (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          lenis.scrollTo(target, { offset: -20 });
+        }
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
     return () => {
+      document.removeEventListener("click", handleClick);
       lenis.destroy();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
   return <>{children}</>;
