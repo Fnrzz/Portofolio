@@ -28,6 +28,8 @@ export default function Home() {
             </section>
             <section id="about" className="bg-black scroll-mt-10">
               <About />
+            </section>
+            <section id="techstack" className="bg-black">
               <TechStack />
             </section>
           </main>

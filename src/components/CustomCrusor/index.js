@@ -21,6 +21,12 @@ const CustomCursor = () => {
       textColor: "text-orange-800",
       bubbleText: "Hi!",
     },
+    techstack: {
+      cursorColor: "#FF5733",
+      bubbleColor: "bg-orange-200",
+      textColor: "text-orange-800",
+      bubbleText: "This is my techstack!",
+    },
     about: {
       cursorColor: "#3498DB",
       bubbleColor: "bg-blue-200",
