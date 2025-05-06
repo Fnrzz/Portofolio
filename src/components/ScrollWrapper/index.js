@@ -9,11 +9,9 @@ const ScrollWrapper = ({ children }) => {
   useEffect(() => {
     const lenis = new Lenis({
       smooth: true,
-      lerp: 0.05,
       smoothWheel: true,
       smoothTouch: true,
-      wheelMultiplier: 0.8,
-      touchMultiplier: 1.5,
+      lerp: 0.05,
       duration: 1.2,
       infinite: false,
     });
