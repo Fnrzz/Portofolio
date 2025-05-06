@@ -1,6 +1,7 @@
 import ScrollWrapper from "@/components/ScrollWrapper";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased overflow-x-hidden`}>
+        <SpeedInsights />
         <ScrollWrapper>{children}</ScrollWrapper>
       </body>
     </html>
