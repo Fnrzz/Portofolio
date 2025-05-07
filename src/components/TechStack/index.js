@@ -142,10 +142,10 @@ const TechStack = () => {
         </div>
 
         <div className="mt-12 flex flex-wrap gap-6 justify-center">
-          {brands.map((brand) => (
+          {brands.map((brand, i) => (
             <div
-              key={brand.name}
-              className="animated-img rounded-full bg-white w-15 h-15 md:w-24 md:h-24 flex items-center justify-center"
+              key={i}
+              className="w-15 h-15 md:w-24 md:h-24 flex items-center justify-center animated-img"
               title={brand.name}
             >
               <Image
@@ -153,7 +153,7 @@ const TechStack = () => {
                 alt={brand.name}
                 width={60}
                 height={60}
-                className="w-[80%] object-cover"
+                className="w-[70%] object-contain"
               />
             </div>
           ))}
