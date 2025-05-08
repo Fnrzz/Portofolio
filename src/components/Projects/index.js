@@ -125,7 +125,7 @@ const Projects = () => {
       </div>
 
       <div className="block lg:hidden relative w-full h-[80vh] ">
-        <div className="project-image absolute top-1/3 left-1/2 w-[80vw]  -translate-x-[100%]  -translate-y-1/2 rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
+        <div className="project-image absolute top-[15%] left-1/2 w-[80vw]  -translate-x-[100%]  rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
           <Image
             src="/images/projects1.png"
             alt="Project 1"
@@ -134,7 +134,7 @@ const Projects = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="project-image absolute top-1/2 left-1/2 w-[80vw]  -translate-x-[30%]  -translate-y-1/2 rotate-[-5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
+        <div className="project-image absolute top-[25%] left-1/2 w-[80vw]  -translate-x-[30%]  rotate-[-5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
           <Image
             src="/images/projects2.png"
             alt="Project 1"
@@ -143,7 +143,7 @@ const Projects = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="project-image absolute top-4/5 left-1/2 w-[80vw]  -translate-x-1/2 -translate-y-1/2 rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
+        <div className="project-image absolute top-[50%] left-1/2 w-[80vw]  -translate-x-1/2 rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
           <Image
             src="/images/projects3.png"
             alt="Project 1"
