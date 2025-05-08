@@ -7,10 +7,10 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 const brands = [
-  { name: "Laravel", logo: "/images/laravel.png" },
-  { name: "Nextjs", logo: "/images/nextjs.png" },
   { name: "React", logo: "/images/react.png" },
   { name: "Tailwind", logo: "/images/tailwind.png" },
+  { name: "Nextjs", logo: "/images/nextjs.png" },
+  { name: "Laravel", logo: "/images/laravel.png" },
 ];
 
 const TechStack = () => {
