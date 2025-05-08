@@ -12,24 +12,13 @@ const About = () => {
   useEffect(() => {
     if (!sectionRef.current) return;
 
+    const elements = sectionRef.current.querySelectorAll(
+      ".animated-text, .animated-img"
+    );
+
     const context = gsap.context(() => {
-      const elements = sectionRef.current.querySelectorAll(
-        ".animated-text, .animated-img"
-      );
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: () => "+=" + elements.length * 150, // total scroll distance
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-        },
-      });
-
       elements.forEach((el, i) => {
-        tl.fromTo(
+        gsap.fromTo(
           el,
           {
             opacity: 0,
@@ -42,8 +31,14 @@ const About = () => {
             scale: 1,
             duration: 0.5,
             ease: "power2.out",
-          },
-          i // urutkan berdasarkan index
+            scrollTrigger: {
+              trigger: el,
+              start: "top 80%", // muncul saat elemen masuk 80% dari viewport
+              end: "top 60%",
+              scrub: true, // bikin animasi nyambung dengan scroll
+              // markers: true, // aktifkan kalau mau debug posisi
+            },
+          }
         );
       });
     }, sectionRef);

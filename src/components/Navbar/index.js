@@ -12,6 +12,13 @@ const Navbar = ({ animate }) => {
   const linksRef = useRef([]);
   const [activeSection, setActiveSection] = useState(null);
 
+  const items = [
+    { id: "home", label: <ArrowUp /> },
+    { id: "about", label: <div className="px-3">About Me</div> },
+    { id: "projects", label: <div className="px-3">Projects</div> },
+    { id: "contact", label: <div className="px-3">Let's Talk</div> },
+  ];
+
   useEffect(() => {
     if (animate) {
       gsap.fromTo(
@@ -80,7 +87,7 @@ const Navbar = ({ animate }) => {
     const sections = items.map((item) => item.id);
 
     sections.forEach((id) => {
-      const section = document.getElementById(id);
+      const section = document.querySelector(`section[id="${id}"]`);
       if (!section) return;
 
       ScrollTrigger.create({
@@ -96,13 +103,6 @@ const Navbar = ({ animate }) => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
-
-  const items = [
-    { id: "home", label: <ArrowUp /> },
-    { id: "about", label: <div className="px-3">About Me</div> },
-    { id: "projects", label: <div className="px-3">Projects</div> },
-    { id: "contact", label: <div className="px-3">Let's Talk</div> },
-  ];
 
   return (
     <nav

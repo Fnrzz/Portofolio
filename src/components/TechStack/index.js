@@ -112,7 +112,7 @@ const TechStack = () => {
           src="/images/3d.png"
           alt="3d"
           fill
-          className=" opacity-60 blur-md object-contain md:object-cover"
+          className=" opacity-60 blur-md object-cover object-center"
         />
         <div className="absolute inset-0 bg-black opacity-10" />
       </div>
@@ -145,7 +145,7 @@ const TechStack = () => {
           {brands.map((brand, i) => (
             <div
               key={i}
-              className="w-15 h-15 md:w-24 md:h-24 flex items-center justify-center animated-img"
+              className="w-15 h-15 md:w-30 md:h-30 flex items-center justify-center animated-img"
               title={brand.name}
             >
               <Image

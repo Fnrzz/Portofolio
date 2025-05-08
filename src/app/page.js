@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CustomCrusor from "@/components/CustomCrusor";
 import TechStack from "@/components/TechStack";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -21,16 +22,19 @@ export default function Home() {
           <div className="hidden lg:block">
             <CustomCrusor />
           </div>
-          <main className="min-h-[500vh] cursor-none">
+          <main className="min-h-[700vh] cursor-none">
             <Navbar animate={true} />
             <section id="home">
               <Hero />
             </section>
             <section id="about" className="bg-black scroll-mt-10">
               <About />
+              <section id="techstack">
+                <TechStack />
+              </section>
             </section>
-            <section id="techstack" className="bg-black">
-              <TechStack />
+            <section id="projects" className="bg-black">
+              <Projects />
             </section>
           </main>
         </>
