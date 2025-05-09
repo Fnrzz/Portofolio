@@ -39,6 +39,12 @@ const CustomCursor = () => {
       textColor: "text-green-800",
       bubbleText: "My projects",
     },
+    cardprojects: {
+      cursorColor: "#2ECC71",
+      bubbleColor: "bg-green-200",
+      textColor: "text-green-800",
+      bubbleText: "See Project",
+    },
     workflow: {
       cursorColor: "#9B59B6",
       bubbleColor: "bg-purple-200",

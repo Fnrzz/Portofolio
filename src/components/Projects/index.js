@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowRightCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
@@ -60,7 +60,26 @@ const Projects = () => {
         );
       });
 
-      // Animate button
+      // Hover effect on project images
+      gsap.utils.toArray(".project-image").forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          gsap.to(el, {
+            scale: 1.05,
+            zIndex: 10,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        el.addEventListener("mouseleave", () => {
+          gsap.to(el, {
+            scale: 1,
+            zIndex: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
       gsap.fromTo(
         ".projects-button",
         {
@@ -80,6 +99,29 @@ const Projects = () => {
           },
         }
       );
+
+      const button = document.querySelector(".projects-button");
+
+      let bounceTween;
+
+      button?.addEventListener("mouseenter", () => {
+        bounceTween = gsap.to(button, {
+          y: -10,
+          duration: 0.4,
+          ease: "power1.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
+      });
+
+      button?.addEventListener("mouseleave", () => {
+        bounceTween?.kill();
+        gsap.to(button, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -96,64 +138,109 @@ const Projects = () => {
 
       <div className="w-full lg:min-h-[70vh] overflow-x-auto overflow-y-hidden scrollbar-hide">
         <div className="flex h-full items-center w-max px-10 py-10">
-          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[10%] rotate-[5deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
-            <Image
-              src="/images/projects1.png"
-              alt="Project 1"
-              width={1200}
-              height={800}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <section
+            id="cardprojects"
+            className="project-image w-[80vw] lg:w-[50vw] -translate-x-[10%] rotate-[8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0"
+          >
+            <a
+              href="https://faridnurraidananda.vercel.app"
+              className="cursor-none"
+              target="_blank"
+            >
+              <Image
+                src="/images/projects1.png"
+                alt="Project 1"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover "
+              />
+            </a>
+          </section>
 
-          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[30%] rotate-[-5deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
-            <Image
-              src="/images/projects2.png"
-              alt="Project 2"
-              width={1200}
-              height={800}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <section
+            id="cardprojects"
+            className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[30%] rotate-[-8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0"
+          >
+            <a
+              href="https://karangpelem-kedawung.desa.id"
+              className="cursor-none"
+              target="_blank"
+            >
+              <Image
+                src="/images/projects2.png"
+                alt="Project 2"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+              />
+            </a>
+          </section>
 
-          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[40%] rotate-[8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
-            <Image
-              src="/images/projects3.png"
-              alt="Project 3"
-              width={1200}
-              height={800}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <section
+            id="cardprojects"
+            className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[50%] rotate-[8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0"
+          >
+            <a
+              href="https://comethru-archive.vercel.app/"
+              className="cursor-none"
+              target="_blank"
+            >
+              <Image
+                src="/images/projects3.png"
+                alt="Project 3"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+              />
+            </a>
+          </section>
 
-          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[50%] rotate-[-8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
-            <Image
-              src="/images/projects4.png"
-              alt="Project 4"
-              width={1200}
-              height={800}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <section
+            id="cardprojects"
+            className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[60%] rotate-[-8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0"
+          >
+            <a
+              href="https://fostiums.org"
+              className="cursor-none"
+              target="_blank"
+            >
+              <Image
+                src="/images/projects4.png"
+                alt="Project 4"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+              />
+            </a>
+          </section>
 
-          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[60%] rotate-[5deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
-            <Image
-              src="/images/projects5.png"
-              alt="Project 5"
-              width={1200}
-              height={800}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <section
+            id="cardprojects"
+            className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[80%] rotate-[8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0"
+          >
+            <a
+              href="https://reactpediaku.vercel.app"
+              className="cursor-none"
+              target="_blank"
+            >
+              <Image
+                src="/images/projects5.png"
+                alt="Project 5"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+              />
+            </a>
+          </section>
         </div>
       </div>
 
-      <div className="projects-button w-full flex justify-center mt-8">
+      <div className=" w-full flex justify-center mt-8">
         <Link
           href={"#"}
-          className="flex items-center gap-2 bg-white text-black font-medium py-2 px-4 rounded-full cursor-none shadow-md shadow-white"
+          className="projects-button flex items-center gap-2 bg-white text-black font-medium py-2 px-4 rounded-full cursor-none shadow-md shadow-white"
         >
-          More Porto <ArrowRightCircle />
+          More Projects <ArrowRight />
         </Link>
       </div>
     </section>
