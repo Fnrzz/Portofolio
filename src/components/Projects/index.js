@@ -94,7 +94,7 @@ const Projects = () => {
         Projects
       </h1>
 
-      <div className="hidden lg:block relative w-full lg:h-[70vh] max-h-[600px]">
+      <div className="hidden lg:block relative w-full lg:h-[70vh]">
         <div className="project-image absolute top-1/2 left-1/2 w-[50vw] -translate-x-[120%] -translate-y-1/2 rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
           <Image
             src="/images/projects1.png"
