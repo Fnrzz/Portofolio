@@ -94,33 +94,57 @@ const Projects = () => {
         Projects
       </h1>
 
-      <div className="hidden lg:block relative w-full lg:h-[70vh]">
-        <div className="project-image absolute top-1/2 left-1/2 w-[50vw] -translate-x-[120%] -translate-y-1/2 rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
-          <Image
-            src="/images/projects1.png"
-            alt="Project 1"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="project-image absolute top-1/2 left-1/2 w-[50vw] -translate-x-1/2 -translate-y-1/2 rotate-[-10deg] z-5 rounded-3xl overflow-hidden shadow-xl shadow-gray">
-          <Image
-            src="/images/projects2.png"
-            alt="Project 2"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="project-image absolute top-1/2 left-1/2 w-[50vw] translate-x-[30%] -translate-y-1/2 rotate-[15deg] z-10 rounded-3xl overflow-hidden shadow-xl shadow-gray">
-          <Image
-            src="/images/projects3.png"
-            alt="Project 3"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover"
-          />
+      <div className="hidden lg:block w-full min-h-[70vh] overflow-x-auto overflow-y-hidden scrollbar-hide">
+        <div className="flex h-full items-center w-max px-10 py-10">
+          <div className="project-image w-[50vw] -translate-x-[10%] rotate-[5deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+            <Image
+              src="/images/projects1.png"
+              alt="Project 1"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="project-image w-[50vw] -translate-x-[30%] rotate-[-5deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+            <Image
+              src="/images/projects2.png"
+              alt="Project 2"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="project-image w-[50vw] -translate-x-[40%] rotate-[8deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+            <Image
+              src="/images/projects3.png"
+              alt="Project 3"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="project-image w-[50vw] -translate-x-[50%] rotate-[-8deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+            <Image
+              src="/images/projects4.png"
+              alt="Project 4"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="project-image w-[50vw] -translate-x-[60%] rotate-[5deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+            <Image
+              src="/images/projects5.png"
+              alt="Project 5"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
 
