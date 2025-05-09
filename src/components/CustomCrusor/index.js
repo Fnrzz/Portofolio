@@ -37,7 +37,19 @@ const CustomCursor = () => {
       cursorColor: "#2ECC71",
       bubbleColor: "bg-green-200",
       textColor: "text-green-800",
-      bubbleText: "Work",
+      bubbleText: "My projects",
+    },
+    workflow: {
+      cursorColor: "#9B59B6",
+      bubbleColor: "bg-purple-200",
+      textColor: "text-purple-800",
+      bubbleText: "How I work",
+    },
+    learningandgrowth: {
+      cursorColor: "#3B82F6",
+      bubbleColor: "bg-blue-100",
+      textColor: "text-blue-900",
+      bubbleText: "Never Stop Growing 🚀",
     },
     contact: {
       cursorColor: "#9B59B6",

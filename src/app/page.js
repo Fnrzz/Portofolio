@@ -7,6 +7,8 @@ import About from "@/components/About";
 import CustomCrusor from "@/components/CustomCrusor";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
+import Workflow from "@/components/Workflow";
+import LearningAndGrowth from "@/components/LearningAndGrowth";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -35,6 +37,12 @@ export default function Home() {
             </section>
             <section id="projects" className="bg-black">
               <Projects />
+            </section>
+            <section id="workflow" className="bg-black">
+              <Workflow />
+            </section>
+            <section id="learningandgrowth">
+              <LearningAndGrowth />
             </section>
           </main>
         </>
