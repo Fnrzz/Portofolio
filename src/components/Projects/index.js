@@ -88,15 +88,15 @@ const Projects = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full flex flex-col justify-center h-[80vh]  lg:min-h-screen py-10 px-5 bg-black text-white overflow-hidden"
+      className="w-full flex flex-col justify-center h-[70vh] lg:min-h-screen py-10 px-5 bg-black text-white overflow-hidden"
     >
       <h1 className="projects-title font-bold text-[15vw] lg:text-[10vw] leading-none uppercase">
         Projects
       </h1>
 
-      <div className="hidden lg:block w-full min-h-[70vh] overflow-x-auto overflow-y-hidden scrollbar-hide">
+      <div className="w-full lg:min-h-[70vh] overflow-x-auto overflow-y-hidden scrollbar-hide">
         <div className="flex h-full items-center w-max px-10 py-10">
-          <div className="project-image w-[50vw] -translate-x-[10%] rotate-[5deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[10%] rotate-[5deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
             <Image
               src="/images/projects1.png"
               alt="Project 1"
@@ -106,7 +106,7 @@ const Projects = () => {
             />
           </div>
 
-          <div className="project-image w-[50vw] -translate-x-[30%] rotate-[-5deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[30%] rotate-[-5deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
             <Image
               src="/images/projects2.png"
               alt="Project 2"
@@ -116,7 +116,7 @@ const Projects = () => {
             />
           </div>
 
-          <div className="project-image w-[50vw] -translate-x-[40%] rotate-[8deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[40%] rotate-[8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
             <Image
               src="/images/projects3.png"
               alt="Project 3"
@@ -126,7 +126,7 @@ const Projects = () => {
             />
           </div>
 
-          <div className="project-image w-[50vw] -translate-x-[50%] rotate-[-8deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[50%] rotate-[-8deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
             <Image
               src="/images/projects4.png"
               alt="Project 4"
@@ -136,7 +136,7 @@ const Projects = () => {
             />
           </div>
 
-          <div className="project-image w-[50vw] -translate-x-[60%] rotate-[5deg] rounded-3xl overflow-hidden shadow-xl shadow-gray-500 flex-shrink-0">
+          <div className="project-image w-[80vw] lg:w-[50vw]  -translate-x-[60%] rotate-[5deg] rounded-3xl overflow-hidden shadow-md shadow-gray-500 flex-shrink-0">
             <Image
               src="/images/projects5.png"
               alt="Project 5"
@@ -145,36 +145,6 @@ const Projects = () => {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
-      </div>
-
-      <div className="block lg:hidden relative w-full h-[80vh] ">
-        <div className="project-image absolute top-[15%] left-1/2 w-[80vw]  -translate-x-[100%]  rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
-          <Image
-            src="/images/projects1.png"
-            alt="Project 1"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="project-image absolute top-[25%] left-1/2 w-[80vw]  -translate-x-[30%]  rotate-[-5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
-          <Image
-            src="/images/projects2.png"
-            alt="Project 1"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="project-image absolute top-[50%] left-1/2 w-[80vw]  -translate-x-1/2 rotate-[5deg] z-0 rounded-3xl overflow-hidden shadow-xl shadow-gray">
-          <Image
-            src="/images/projects3.png"
-            alt="Project 1"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover"
-          />
         </div>
       </div>
 
