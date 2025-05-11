@@ -41,7 +41,7 @@ export const metadata = {
     siteName: "Farid Nur Raidananda Portfolio",
     images: [
       {
-        url: "/images/avatar1.png",
+        url: "https://faridnurraidananda.vercel.app/images/avatar1.png",
         width: 1200,
         height: 630,
         alt: "Farid Nur Raidananda Portfolio Preview",
