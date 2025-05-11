@@ -61,7 +61,7 @@ const CustomCursor = () => {
       cursorColor: "#9B59B6",
       bubbleColor: "bg-purple-200",
       textColor: "text-purple-800",
-      bubbleText: "Say Hi",
+      bubbleText: "Click Here!",
     },
   };
 

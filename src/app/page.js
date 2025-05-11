@@ -9,6 +9,7 @@ import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import Workflow from "@/components/Workflow";
 import LearningAndGrowth from "@/components/LearningAndGrowth";
+import LetsTalk from "@/components/LetsTalk";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ export default function Home() {
           <div className="hidden lg:block">
             <CustomCrusor />
           </div>
-          <main className="min-h-[700vh] cursor-none">
+          <main className=" cursor-none">
             <Navbar animate={true} />
             <section id="home">
               <Hero />
@@ -43,6 +44,9 @@ export default function Home() {
             </section>
             <section id="learningandgrowth">
               <LearningAndGrowth />
+            </section>
+            <section id="contact" className="bg-black">
+              <LetsTalk />
             </section>
           </main>
         </>
