@@ -25,16 +25,19 @@ export const metadata = {
     "Next.js Developer",
   ],
   authors: [
-    { name: "Farid Nur Raidananda", url: "faridnurraidananda.vercel.app" },
+    {
+      name: "Farid Nur Raidananda",
+      url: "https://faridnurraidananda.vercel.app",
+    },
   ],
   creator: "Farid Nur Raidananda",
   publisher: "Farid Nur Raidananda",
-  metadataBase: new URL("faridnurraidananda.vercel.app"),
+  metadataBase: new URL("https://faridnurraidananda.vercel.app"),
   openGraph: {
     title: "Farid Nur Raidananda | Front-End Web Developer",
     description:
       "Explore the portfolio of Farid Nur Raidananda, a creative Front-End Developer crafting elegant and efficient web experiences.",
-    url: "faridnurraidananda.vercel.app",
+    url: "https://faridnurraidananda.vercel.app",
     siteName: "Farid Nur Raidananda Portfolio",
     images: [
       {
