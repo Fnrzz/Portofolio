@@ -130,7 +130,7 @@ const Projects = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full flex flex-col justify-center h-[70vh] lg:min-h-screen py-10 px-5 bg-black text-white overflow-hidden"
+      className="w-full flex flex-col justify-center h-[70vh] lg:min-h-screen bg-black text-white overflow-hidden"
     >
       <h1 className="projects-title font-bold text-[15vw] lg:text-[10vw] leading-none uppercase">
         Projects

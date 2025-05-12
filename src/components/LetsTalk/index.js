@@ -8,6 +8,7 @@ const avatars = [
   "/images/avatar2.png",
   "/images/avatar3.png",
   "/images/avatar4.png",
+  "/images/avatar5.png",
 ];
 
 const LetsTalk = () => {
@@ -96,7 +97,7 @@ const LetsTalk = () => {
             alt={`avatar-${index}`}
             width={200}
             height={200}
-            className="rounded-full"
+            className="w-20 md:w-40"
           />
         </div>
       ))}
