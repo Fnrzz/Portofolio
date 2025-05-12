@@ -14,7 +14,7 @@ const Workflow = () => {
       title: "Planning",
       description:
         "Start by discussing the goals and features of the project, then sketch wireframes and plan the tech stack.",
-      tools: ["Figma", "Notion"],
+      tools: ["Figma", "Zoom"],
     },
     {
       title: "Design to Code",
